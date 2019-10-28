@@ -101,7 +101,8 @@ class App(object):
         # draw vertices
         if enableVerts:
             for c in flat_points:
-                pygame.draw.circle(self.display, (0,0,0), c.astype(int), 3)
+                if c[2] > 0:
+                    pygame.draw.circle(self.display, (0,0,0), c.astype(int), 3)
 
         # draw edges
         for edge in self.cube.edge:
